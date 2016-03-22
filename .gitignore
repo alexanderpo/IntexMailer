@@ -1,0 +1,9 @@
+#VisualCode
+.vscode
+
+#npm debug log
+npm-debug.log
+
+# Dependencies
+/node_modules
+

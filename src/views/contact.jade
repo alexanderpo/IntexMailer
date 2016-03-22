@@ -1,0 +1,128 @@
+extends layout
+
+block head
+    // Google map
+    script(type='text/javascript', src='http://maps.google.com/maps/api/js?sensor=false')    
+    script(type='text/javascript').
+      function initialize() {
+      var latlng = new google.maps.LatLng(53.6829476,23.8388704);
+      var settings = {
+      zoom: 16,
+      center: latlng,
+      mapTypeControl: false,
+      mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+      navigationControl: false,
+      navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+      mapTypeId: google.maps.MapTypeId.ROADMAP};
+      var map = new google.maps.Map(document.getElementById("map_canvas"), settings);
+      var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h2 id="firstHeading" class="firstHeading">Creative Media</h2>'+
+      '<div id="bodyContent">'+
+      '<p>This is a pop up. You can put here your text.</p>'+
+      '</div>'+
+      '</div>';
+      var infowindow = new google.maps.InfoWindow({
+      content: contentString
+      });
+      var companyImage = new google.maps.MarkerImage('images/marker.png',
+      new google.maps.Size(70,85),
+      new google.maps.Point(0,0),
+      new google.maps.Point(35,220)
+      );
+      /*var companyShadow = new google.maps.MarkerImage('images/marker-shadow.png',
+      new google.maps.Size(108,56),
+      new google.maps.Point(0,0),
+      new google.maps.Point(30,190));*/
+      var companyPos = new google.maps.LatLng(53.6829476,23.8388704);
+      var companyMarker = new google.maps.Marker({
+      position: companyPos,
+      map: map,
+      icon: companyImage,
+      title:"Intex Mailer",
+      zIndex: 3});
+      google.maps.event.addListener(companyMarker, 'click', function() {
+      infowindow.open(map,companyMarker);
+      });
+      }
+      
+    script(type='text/javascript').
+      $(document).ready(function(){
+        initialize();
+      });
+block content
+    #header-bg
+    #sub-header-bg
+    // / Header Background
+    // Main Container
+    #body-wrapper
+      // Header
+      #header
+        a#logo(href='/')       
+        #search-container
+          form#search(method='post')
+            input.search(type='text', onfocus="if(this.value == 'Search Template') { this.value = ''; }", onblur="if(this.value == '') { this.value = 'Search Template'; }", value='Search Template')               
+            button(type='submit') Submit
+        // Navigation
+        ul#navigation
+          li
+            a(href='/') Home             
+          li
+            a(href='/templates') Templates            
+          li.current
+            a(href='/contact') Contact
+        // /Navigation
+      // /Header
+      // Content
+      #top-content.container.clearfix
+        // Back to top
+        p#back-top(style='display: block;')
+          a(href='#top')
+            span
+        // /Back to top
+        // Page title
+        nav#page-title
+          h1 Contact us
+        // /Page title
+      // /Content
+    // /Main Container
+    // Contact Container
+    #contact-map
+      // Contact Info
+      #contact-info
+        .one-fourth
+          #contact-details
+            h4 Contact details                   
+            p
+              | 30 Central Park
+              br
+              |                         Grodno, BL 94108
+              br
+              |                         Belarus
+              br
+              br
+              |                         
+              |                         Phone: (375) 25-123-546
+              br
+              |                         Fax: +08 (123) 456-7890
+              br
+              |                         Email: intexmailer@intexmailer.com
+              br
+              |                         Web: intexmailer.com
+        .three-fourth.last
+          // Comments Form
+          #contact-form
+            h4 Send us a message                        
+            #message                         
+            form#contactform(method='post', action='contact.php', name='contactform')
+              input#name(name='name', type='text', size='30', onfocus="if(this.value == 'Name') { this.value = ''; }", onblur="if(this.value == '') { this.value = 'Name'; }", value='Name')                             
+              input#email(name='email', type='text', size='30', onfocus="if(this.value == 'E-mail') { this.value = ''; }", onblur="if(this.value == '') { this.value = 'E-mail'; }", value='E-mail')                            
+              input#phone.last(name='phone', type='text', size='30', onfocus="if(this.value == 'Phone') { this.value = ''; }", onblur="if(this.value == '') { this.value = 'Phone'; }", value='Phone')                             
+              textarea#comments(name='comments', cols='40', rows='3', onfocus="if(this.value == 'Message') { this.value = ''; }", onblur="if(this.value == '') { this.value = 'Message'; }", value='Message') Message
+              input#submit.btn-image(type='submit', value='Submit')
+          // /Comments Form
+      // /Contact Info
+      // Map
+      #map_canvas(style='width:100%; height:100%')
+      // End Map

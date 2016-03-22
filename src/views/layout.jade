@@ -1,0 +1,112 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')     
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')    
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    
+    title=title
+   
+    link(rel='stylesheet', type='text/css', href='/css/style.css')   
+    link(rel='stylesheet', href='/css/flexslider.css', type='text/css')   
+    link(rel='stylesheet', href='/css/prettyPhoto.css', type='text/css', media='screen', title='prettyPhoto main stylesheet', charset='utf-8')
+    
+    script(src='/js/jquery.min.js', type='text/javascript', charset='utf-8')
+        // Back to top
+    script(type='text/javascript').
+      $(document).ready(function(){
+      // hide #back-top first
+      $("#back-top").hide();
+      // fade in #back-top
+      $(function () {
+      $(window).scroll(function () {
+      if ($(this).scrollTop() > 100) {
+      $('#back-top').fadeIn();
+      } else {
+      $('#back-top').fadeOut();
+      }
+      });
+      // scroll body to 0px on click
+      $('#back-top a').click(function () {
+      $('body,html').animate({
+      scrollTop: 0
+      }, 800);
+      return false;
+      });
+      });
+      });
+    script(type='text/javascript').
+      $(window).load(function(){
+      var hh = $('#header').height();
+      var fh = $('#footer').height();
+      var wh = $(window).height();
+      var сh = wh - hh - fh;
+      $('#content').css('min-height', сh);
+      });
+   
+    block head     
+  body
+    block content
+  footer 
+     #footer
+      #footer-center.container
+        .footer-left
+          ul.footer-menu
+            li
+              a(href='#') Home
+            |                         
+            li
+              a(href='#') Templates
+            |                         
+            li.footer-last
+              a(href='#') Contact
+          |                     
+          ul.footer-address
+            li
+              img(src='/images/home-icon.png')
+              | 25/3 Ilomko. , Belarus , BL 94133
+            |                         
+            li
+              img(src='/images/phone-icon.png')
+              | (375) 25-123-587
+            |                         
+            li
+              img(src='/images/email-icon.png')
+              | intexmailer@intexmailer.com
+        | &#x9;
+        |                 
+        #footer-newsletter.footer-right
+          p Newsletter
+          |                     
+          form#newsletter(method='post' action='/newsletter')
+            input.newsletter(type='text' name='newsletter[email]' onfocus="if(this.value == 'E-mail here') { this.value = ''; }", onblur="if(this.value == '') { this.value = 'E-mail here'; }" value='E-mail here')
+            |                         
+            button(type='submit') Submit
+      |             
+      #footer-bottom
+        #footer-center-bottom.container
+          // Copyright
+          ul.copyright
+            li 2016 &copy; Intex Media. All rights reserved
+          // /Copyright
+          // Social Links
+          ul.social-links
+            li.facebook
+              a(href='#') Facebook
+            |                     
+            li.twitter
+              a(href='#') Twitter
+            |                     
+            li.vimeo
+              a(href='#') Vimeo
+            |                     
+            li.linkedin
+              a(href='#') LinkedIn
+            |                     
+            li.dribble
+              a(href='#') Dribbleo
+            |                     
+            li.google
+              a(href='#') Google
+          // /Social Links
+    // /Footer

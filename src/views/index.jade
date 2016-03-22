@@ -1,0 +1,144 @@
+extends layout
+block head
+    // PrettyPhoto
+    script(src='js/jquery.prettyPhoto.js', type='text/javascript', charset='utf-8')
+    script(type='text/javascript', charset='utf-8').
+      $(document).ready(function(){
+      $("area[rel^='prettyPhoto']").prettyPhoto();
+      $(".gallery:first a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'fast',theme:'pp_default',slideshow:4000, opacity: 0.50, deeplinking: false, overlay_gallery: false, autoplay_slideshow: false});
+      });
+    // FlexSlider
+    script(src='js/jquery.flexslider.js')
+    script(type='text/javascript').
+      $(window).load(function(){
+      $('.flexslider').flexslider({
+      animation: "fade",
+      start: function(slider){
+      $('body').removeClass('loading');
+      }
+      });
+      });
+
+block content
+    #header-bg
+    #body-wrapper
+      #header
+        a#logo(href='/')
+        #search-container
+          form#search(method='post')
+            input.search(type='text', onfocus="if(this.value == 'Search Template') { this.value = ''; }", onblur="if(this.value == '') { this.value = 'Search Template'; }", value='Search Template')             
+            button(type='submit') Submit        
+        ul#navigation
+          li.current
+            a(href='/') Home          
+          li
+            a(href='/templates') Templates          
+          li
+            a(href='/contact') Contact
+      #content.container.clearfix
+        p#back-top(style='display: block;')
+          a(href='#top')
+            span
+        section.slider(style='margin:40px 0 100px')
+          .flexslider
+            ul.slides
+              li
+                img(src='images/flexslide1.jpg')            
+                .slide-caption
+                  h3 Simple to use
+                  p
+                    | Donec scelerisque aliquet mi, non venenatis urnas iaculis. Utea id nila ante. Cras est massa, interdum  ateal imperdiet etean, gravida eu quame. Aeneana volutpat hendrerit posuere.                          
+                  p
+                    a.btn-image(href='#') Check Out
+              li
+                img(src='images/flexslide3.jpg')                  
+                .slide-caption
+                  h3 Amazing templates                        
+                  p
+                    | Donec scelerisque aliquet mi, non venenatis urnas iaculis. Utea id nila ante. Cras est massa, interdum  ateal imperdiet etean, gravida eu quame. Aeneana volutpat hendrerit posuere.                       
+                  p
+                    a.btn-image(href='#') See This               
+              li
+                img(src='images/flexslide2.jpg')              
+                .slide-caption
+                  h3 Simply to custom
+                  p
+                    | Donec scelerisque aliquet mi, non venenatis urnas iaculis. Utea id nila ante. Cras est massa, interdum  ateal imperdiet etean, gravida eu quame. Aeneana volutpat hendrerit posuere.
+        #features
+          .feature.one-fourth
+            .feature-icon
+              img(src='images/services_icon_01.png', alt='')             
+            .feature-description
+              h4 Responsive Mail                   
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et ipsum tellus, vitae sagittis enim. Morbi ultricies ultrices elit vitae        
+          .feature.one-fourth
+            .feature-icon
+              img(src='images/services_icon_02.png', alt='')                
+            .feature-description
+              h4 Mail Support                    
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et ipsum tellus, vitae sagittis enim. Morbi ultricies ultrices elit vitae         
+          .feature.one-fourth
+            .feature-icon
+              img(src='images/services_icon_03.png', alt='')                
+            .feature-description
+              h4 Modern &amp; Clean                    
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et ipsum tellus, vitae sagittis enim. Morbi ultricies ultrices elit vitae       
+          .feature.one-fourth.last
+            .feature-icon
+              img(src='images/services_icon_04.png', alt='')                
+            .feature-description
+              h4 Easily Customisable                   
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et ipsum tellus, vitae sagittis enim. Morbi ultricies ultrices elit vitae
+        .gray-box
+          .graybox-left
+            h3 Creative is incredibly responsive mail, with a refreshingly clean design              
+            p
+              | And it has some awesome features, premium templates, unlimited custom, advanced mail options and so much more!           
+          .graybox-right
+            a.btn-image(href='#') Try to create
+        h4 Latest templates     
+        #projects4.gallery
+          li.item(data-id='id-1', data-type='simple')
+            .view.overlay
+              img(src='images/template/1_thumb.jpg', alt='title here')                      
+              a(href='/setuptemplate')
+                .mask
+                  h3 Project title                              
+                  p
+                    | Simple, Branding
+                    br
+                    b 2016                 
+          li.item(data-id='id-2', data-type='commerce')
+            .view.overlay
+              img(src='images/template/2_thumb.jpg', alt='title here')                      
+              a(href='/setuptemplate')
+                .mask
+                  h3 Project title                                
+                  p
+                    | Simple, Branding
+                    br
+                    b 2016                               
+          li.item(data-id='id-3', data-type='branding')
+            .view.overlay
+              img(src='images/template/3_thumb.jpg', alt='title here')                         
+              a(href='/setuptemplate')
+                .mask
+                  h3 Project title                                
+                  p
+                    | Simple, Branding
+                    br
+                    b 2016                 
+          li.item(data-id='id-4', data-type='marketing')
+            .view.overlay
+              img(src='images/template/4_thumb.jpg', alt='title here')                         
+              a(href='/setuptemplate')
+                .mask
+                  h3 Project title                               
+                  p
+                    | Simple, Branding
+                    br
+                    b 2016
