@@ -95,4 +95,20 @@ $(document).ready(() => {
     const tempPath = URL.createObjectURL($('#imageSetupButton').prev()[0].files[0]);
     frameElement.attr('src', tempPath);
   });
+  // sending email
+
+  $('#sendTemplate').on('click', () => {
+    const frameDocument = $('.email-preview').children().contents().find('html').get(0);
+
+    const email = $('#email').val();
+    const template = frameDocument.outerHTML;
+
+    $('#message').text('sending email. please wait');
+
+    $.get('/send', { to: email, content: template }, (data) => {
+      if (data === 'send') {
+        $('#message').empty().html('Email is been sent at ' + email + ' . Please check inbox !');
+      }
+    });
+  });
 });

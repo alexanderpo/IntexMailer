@@ -44,13 +44,14 @@ block content
         // Main Content
         #preview-email-container
           .email-preview
-            iframe(src='/mailtemplates/mailgun.html', allowfullscreen='')
+            iframe(src='/mailtemplates/cleave.html', id='frame_tempalte' allowfullscreen='')
           // Main Content       
         #email-custom
           .setups
           .emails
             h4 Enter E-Mail: 
-            input(type='email', name="email", onfocus="if(this.value == 'youremail@mail.com') { this.value = ''; }", onblur="if(this.value == '') { this.value = 'youremail@mail.com'; }", value='youremail@mail.com') 
-            a.btn-image#send-emails(href='#') Send email
+            input(type='email', id='email', name="email", onfocus="if(this.value == 'youremail@mail.com') { this.value = ''; }", onblur="if(this.value == '') { this.value = 'youremail@mail.com'; }", value='youremail@mail.com') 
+            a.btn-image#sendTemplate Send email
+            span#message
       // /Content
     // /Main Container
