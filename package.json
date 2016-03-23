@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node_modules/babel/bin/babel.js src --source-maps --out-dir dist",
     "start": "node_modules/nodemon/bin/nodemon.js -- node_modules/babel/bin/babel-node.js src/server.js",
-    "lint": "eslint . --ext .js --ext .jsx",
-    "precommit": "npm run lint"
+    "lint": "eslint . --ext .js --ext .jsx"
   },
   "author": "alexpo",
   "license": "ISC",
@@ -17,6 +16,7 @@
     "cookie-parser": "^1.4.1",
     "express": "4.13.3",
     "jade": "^1.11.0",
+    "nodemailer": "^2.3.0",
     "serve-favicon": "^2.3.0"
   },
   "devDependencies": {
