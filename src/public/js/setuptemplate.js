@@ -103,11 +103,15 @@ $(document).ready(() => {
     const email = $('#email').val();
     const template = frameDocument.outerHTML;
 
-    $('#message').text('sending email. please wait');
+    const message = $('#message');
+
+    message.text('Sending email. Please wait...').fadeIn('slow');
 
     $.get('/send', { to: email, content: template }, (data) => {
       if (data === 'send') {
-        $('#message').empty().html('Email is been sent at ' + email + ' . Please check inbox !');
+        message.empty().html('Email is been sent at ' + email + ' . Please check inbox !').delay(6000).fadeOut('slow');
+      } else {
+        message.empty().html('Some problem. Please try later... ').delay(10000).fadeOut('slow');
       }
     });
   });

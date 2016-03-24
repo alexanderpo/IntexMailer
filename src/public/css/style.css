@@ -396,6 +396,10 @@ ul{list-style:none}
         float: right;
         line-height: normal;
     }
+
+    #sendTemplate:hover{
+    	cursor: pointer; ;
+    }
 	
 	#main {
         float: left;
@@ -1141,7 +1145,8 @@ ul{list-style:none}
 	
 	#message { 
 		margin: 10px 0; 
-		padding: 0; 
+		padding: 0;
+		float: left;
 	}
 
 	.error_message { 

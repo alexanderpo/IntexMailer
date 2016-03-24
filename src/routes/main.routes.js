@@ -1,16 +1,22 @@
-// Import node module
-import express from 'express';
-import nodemailer from 'nodemailer';
-import smtpTransport from 'nodemailer-smtp-transport';
+import { Router } from 'express';
+import { sendMail } from '../controllers/mailer';
 
-const router = express.Router();
-const smtpTransportOptions = {
-  service: 'Gmail',
-  auth: {
-    user: 'alexpojob@gmail.com',
-    pass: 'blbyf[eq',
-  },
-};
+import Templates from '../models/templates';
+
+const router = Router();
+
+  // create in database
+  /* const template = new Templates({
+    title: 'Cleave',
+    category: 'Branding',
+    created: Date,
+  });
+  template.save((err) => {
+    if (err) {
+      console.log(err);
+    }
+    console.log('template add');
+  }); */
 
 // GET defaults pages.
 router.get('/', (req, res) => {
@@ -19,6 +25,15 @@ router.get('/', (req, res) => {
 
 router.get('/templates', (req, res) => {
   res.render('templates', { title: 'I.M. - Templates' });
+
+  Templates.create({
+    title: 'Cleave',
+    category: 'Branding',
+  })
+    .then(template => {
+      res.json(template);
+      console.log('created');
+    });
 });
 
 router.get('/contact', (req, res) => {
@@ -30,25 +45,6 @@ router.get('/templates/:id', (req, res) => {
   res.render('setuptemplate', { title: 'I.M. - ' + req.params.id });
 });
 
-router.get('/send', (req, res) => {
-  const transporter = nodemailer.createTransport(smtpTransport(smtpTransportOptions));
-
-  const mailOptions = {
-    from: 'Intex - Mailer <sender@example.com>',
-    to: req.query.to,
-    subject: 'Intex Mailer Template',
-    html: req.query.content,
-  };
-
-  transporter.sendMail(mailOptions, (err) => {
-    if (err) {
-      console.log(err);
-      res.end('error');
-    } else {
-      console.log('Message send!');
-      res.end('send');
-    }
-  });
-});
+router.get('/send', sendMail);
 
 export default router;
