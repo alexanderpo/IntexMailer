@@ -398,7 +398,7 @@ ul{list-style:none}
     }
 
     #sendTemplate:hover{
-    	cursor: pointer; ;
+    	cursor: pointer;
     }
 	
 	#main {
@@ -590,7 +590,43 @@ ul{list-style:none}
 	}
 
     /*  Buttons  --------------------------------*/
-	
+	#addEmailInput {
+		float: right;
+		padding:0px 0px 32px 32px;
+		background: url(../images/slider-control-list.png) no-repeat center #23abf1;
+		color: #fff;
+		font-size:12px;
+		border-radius: 3px;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		line-height:38px;	
+	}
+
+	#addEmailInput:hover {
+		text-decoration: none;
+		background: url(../images/slider-control-list.png) no-repeat center #757575;
+		color: #fff;
+		cursor: pointer;
+	}
+
+	#sendTemplate {
+		padding:12px 15px 12px 45px;
+		background: url(../images/link.png) no-repeat 15px 10px #23abf1;
+		color: #fff;
+		font-size:12px;
+		border-radius: 3px;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		line-height:38px;
+		margin-left: 10px;
+	}
+
+	#sendTemplate:hover {
+		text-decoration: none;
+		background: url(../images/link.png) no-repeat 15px 10px #757575;
+		color: #fff;
+	}
+
 	.btn-image {
 		padding:12px 15px 12px 45px;
 		background: url(../images/link.png) no-repeat 15px 10px #23abf1;

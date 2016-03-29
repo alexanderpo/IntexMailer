@@ -97,10 +97,24 @@ $(document).ready(() => {
   });
   // sending email
 
+  $('#addEmailInput').on('click', () => {
+    $('.emails').append(
+      '<input type="email" class="email" name="email" placeholder="youremail@mail.com">'
+    )
+    .fadeIn(700);
+  });
+
+  $('.email').on('click', () => {
+    $(frameElement).removeClass('markedElement');
+  });
+
   $('#sendTemplate').on('click', () => {
     const frameDocument = $('.email-preview').children().contents().find('html').get(0);
 
-    const email = $('#email').val();
+    const email = $('.email').map(function() {
+      return $(this).val();
+    }).get();
+
     const template = frameDocument.outerHTML;
 
     const message = $('#message');

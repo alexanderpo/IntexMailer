@@ -26,14 +26,14 @@ router.get('/', (req, res) => {
 router.get('/templates', (req, res) => {
   res.render('templates', { title: 'I.M. - Templates' });
 
-  Templates.create({
+  /* Templates.create({
     title: 'Cleave',
     category: 'Branding',
   })
     .then(template => {
       res.json(template);
       console.log('created');
-    });
+    }); */
 });
 
 router.get('/contact', (req, res) => {
