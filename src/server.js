@@ -5,11 +5,11 @@ import favicon from 'serve-favicon';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import routes from './routes/main.routes';
-import mongoose from 'mongoose';
+// import mongoose from 'mongoose';
 
 const app = express();
 
-mongoose.connect('mongodb://localhost/intexmailer');
+// mongoose.connect('mongodb://localhost/intexmailer');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -39,12 +39,12 @@ block content
         // /Back to top
         // Page title
         nav#page-title
-          h1 Project name here
+          h1!= pageTitle
         // /Page title
         // Main Content
         #preview-email-container
           .email-preview
-            iframe(src='/mailtemplates/oxygen.html', id='frame_tempalte' allowfullscreen='')
+            iframe(src='/mailtemplates/#{frameURL}.html', id='frame_tempalte' allowfullscreen='')
           // Main Content       
         #email-custom
           .setups
