@@ -97,17 +97,35 @@ $(document).ready(() => {
   });
   // sending email
 
+  $('#addEmailInput').on('click', () => {
+    $('.emails').append(
+      '<input type="email" class="email" name="email" placeholder="youremail@mail.com">'
+    )
+    .fadeIn(700);
+  });
+
+  $('.email').on('click', () => {
+    $(frameElement).removeClass('markedElement');
+  });
+
   $('#sendTemplate').on('click', () => {
     const frameDocument = $('.email-preview').children().contents().find('html').get(0);
 
-    const email = $('#email').val();
+    const email = $('.email').map(function() {
+      return $(this).val();
+    }).get();
+
     const template = frameDocument.outerHTML;
 
-    $('#message').text('sending email. please wait');
+    const message = $('#message');
+
+    message.text('Sending email. Please wait...').fadeIn('slow');
 
     $.get('/send', { to: email, content: template }, (data) => {
       if (data === 'send') {
-        $('#message').empty().html('Email is been sent at ' + email + ' . Please check inbox !');
+        message.empty().html('Email is been sent at ' + email + ' . Please check inbox !').delay(6000).fadeOut('slow');
+      } else {
+        message.empty().html('Some problem. Please try later... ').delay(10000).fadeOut('slow');
       }
     });
   });

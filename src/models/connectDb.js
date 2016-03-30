@@ -1,0 +1,12 @@
+import mongoose from 'mongoose';
+
+mongoose.connect('mongodb://localhost/intexmailer');
+
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', () => {
+  console.log('connect');
+});
+
+export default mongoose;

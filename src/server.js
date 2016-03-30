@@ -5,8 +5,11 @@ import favicon from 'serve-favicon';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import routes from './routes/main.routes';
+// import mongoose from 'mongoose';
 
 const app = express();
+
+// mongoose.connect('mongodb://localhost/intexmailer');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -32,7 +35,6 @@ app.use((req, res, next) => {
 const server = app.listen(3000, () => {
 	// destructuring
   const { port } = server.address();
-
   // string interpolation:
   console.log(`Intex Mailer listening at http://localhost:${port}`);
 });
