@@ -5,6 +5,7 @@ block head
     script(type='text/javascript', src='js/jquery.quicksand.js')
     script(type='text/javascript', src='js/jquery.easing.1.3.js')
     script(type='text/javascript', src='js/script.js')
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
 block content
     #header-bg
     #sub-header-bg
@@ -50,12 +51,26 @@ block content
         #projects4
           each templateItem in items
             ul.template.group
-              li.item(data-id='id-1', data-type='simple')
+              li.item(data-id=templateItem.dataId, data-type=templateItem.dataType)
                 .view.overlay
                   img(src=templateItem.image)
                   a(href=templateItem.link)
                     .mask
                       h3=templateItem.title                         
+                      p=templateItem.description
+                        br
                       p=templateItem.tags
                         br
-                        b=templateItem.year 
+                        br
+                      .star-rating
+                        .star-rating__wrap
+                            input#star-rating-5.star-rating__input(type='radio', name='rating', value='5')
+                            label.star-rating__ico.fa.fa-star-o.fa-lg(for='star-rating-5', title='5 out of 5 stars')
+                            input#star-rating-4.star-rating__input(type='radio', name='rating', value='4')
+                            label.star-rating__ico.fa.fa-star-o.fa-lg(for='star-rating-4', title='4 out of 5 stars')
+                            input#star-rating-3.star-rating__input(type='radio', name='rating', value='3')
+                            label.star-rating__ico.fa.fa-star-o.fa-lg(for='star-rating-3', title='3 out of 5 stars')
+                            input#star-rating-2.star-rating__input(type='radio', name='rating', value='2')
+                            label.star-rating__ico.fa.fa-star-o.fa-lg(for='star-rating-2', title='2 out of 5 stars')
+                            input#star-rating-1.star-rating__input(type='radio', name='rating', value='1')
+                            label.star-rating__ico.fa.fa-star-o.fa-lg(for='star-rating-1', title='1 out of 5 stars')

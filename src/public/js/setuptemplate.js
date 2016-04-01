@@ -99,9 +99,14 @@ $(document).ready(() => {
 
   $('#addEmailInput').on('click', () => {
     $('.emails').append(
-      '<input type="email" class="email" name="email" placeholder="youremail@mail.com">'
+      '<input type="email" class="email" name="email" placeholder="youremail@mail.com"><a id="deleteMailInput" class="deleteMailInput" />'
     )
     .fadeIn(700);
+  });
+
+  $(document).on('click', '.deleteMailInput', () => {
+    $('#deleteMailInput').prev().remove();
+    $('#deleteMailInput').remove();
   });
 
   $('.email').on('click', () => {

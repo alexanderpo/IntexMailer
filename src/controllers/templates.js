@@ -8,6 +8,9 @@ export function getTemplates(req, res) {
     tags: tem.tags,
     image: tem.image,
     link: tem.link,
+    description: tem.description,
+    dataType: tem.dataType,
+    dataId: tem.dataId,
   }));
 
   res.render('templates', {

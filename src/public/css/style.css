@@ -479,6 +479,17 @@ ul{list-style:none}
 		color:#8a8e90;
 		font-size:30px;
 	}
+
+	#page-title h1 span {
+		font-weight:lighter;
+		font-family: 'TitilliumText22LThin', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+		margin-bottom: 55px;
+		width: 100%;
+		text-align:left;
+		padding-top:14px;
+		color:#8a8e90;
+		font-size:20px;
+	}
 	
 	
 	#page-title p {
@@ -593,7 +604,7 @@ ul{list-style:none}
 	#addEmailInput {
 		float: right;
 		padding:0px 0px 32px 32px;
-		background: url(../images/slider-control-list.png) no-repeat center #23abf1;
+		background: url(../images/add.png) no-repeat center;
 		color: #fff;
 		font-size:12px;
 		border-radius: 3px;
@@ -604,11 +615,29 @@ ul{list-style:none}
 
 	#addEmailInput:hover {
 		text-decoration: none;
-		background: url(../images/slider-control-list.png) no-repeat center #757575;
+		background: url(../images/add.png) no-repeat center;
 		color: #fff;
 		cursor: pointer;
 	}
 
+	.deleteMailInput{
+		float: right;
+		padding:0px 0px 32px 32px;
+		background: url(../images/delete.png) no-repeat center;
+		color: #fff;
+		font-size:12px;
+		border-radius: 3px;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		line-height:38px;	
+	}
+	.deleteMailInput:hover{
+		text-decoration: none;
+		background: url(../images/delete.png) no-repeat center;
+		transform: rotate(-30deg);
+		color: #fff;
+		cursor: pointer;
+	}
 	#sendTemplate {
 		padding:12px 15px 12px 45px;
 		background: url(../images/link.png) no-repeat 15px 10px #23abf1;
@@ -948,8 +977,38 @@ ul{list-style:none}
 }
 
     /*  Project Item Overlay  --------------------------------*/
-	
-		
+    /*star raiting */
+	.star-rating{
+		font-size: 0;
+	}
+	.star-rating__wrap{
+		display: inline-block;
+		font-size: 1rem;
+	}
+	.star-rating__wrap:after{
+		content: "";
+		display: table;
+		clear: both;
+	}
+	.star-rating__ico{
+		float: right;
+		padding-left: 2px;
+		cursor: pointer;
+		color: #FFB300;
+	}
+	.star-rating__ico:last-child{
+		padding-left: 0;
+	}
+	.star-rating__input{
+		display: none;
+	}
+	.star-rating__ico:hover:before,
+	.star-rating__ico:hover ~ .star-rating__ico:before,
+	.star-rating__input:checked ~ .star-rating__ico:before
+	{
+		content: "\f005";
+	}
+
    .view {
 	   width: 100%;
 	   height: 100%;   
@@ -2187,12 +2246,8 @@ ul{list-style:none}
 		width: 280px;
 	}
 
-
-
 /* Contact */		
-	
-	
-	
+		
 	#contact-info {
 		margin-left: -140px;
 		width: 280px;
