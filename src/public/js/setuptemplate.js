@@ -7,6 +7,7 @@ $(document).ready(() => {
 
   function markSelect(element) { // added class for mark active element
     $(element).addClass('markedElement');
+    // $(element).append('<a id="deleteBlock"><img src="/images/drop.png" /></a>');
     // element.css('background','#23ABF1');
   }
 
@@ -17,7 +18,7 @@ $(document).ready(() => {
 
       iframeDocument.find('head')
         .append(   // append style for active element, style for cursor on hover
-          '<style>.markedElement{background: #FF8555;padding:5px;border-radius:10px;}a,img,h1,h2,h3,h4,h5,h6,span,strong,b,em,p,button,input{cursor:pointer;}</style>'
+          '<style>.markedElement{background: rgba(255,133,85, 0.7);padding:2px;border-radius:10px;}a,img,h1,h2,h3,h4,h5,h6,span,strong,b,em,p,button,input{cursor:pointer;}</style>'
         );
 
       iframeDocument

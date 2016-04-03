@@ -1294,11 +1294,11 @@ ul{list-style:none}
 	}
     
     .setup button {
-		-webkit-transition: background 0.3s ease-in-out 0s;
+		-webkit-transition: background 0.4s ease-in-out 0s;
 		-moz-transition: background 0.3s ease-in-out 0s;
 		-o-transition:background 0.3s ease-in-out 0s;
 		-ms-transition:background 0.3s ease-in-out 0s;
-		background: url("../images/setup-button.png") no-repeat scroll center center #23abf1;
+		background: url("../images/change.png") no-repeat scroll center;
 		margin-left:5px;
 		cursor:pointer;    
 		height: 35px;
@@ -1308,7 +1308,7 @@ ul{list-style:none}
 	}
 	
 	.setup button:hover {
-        background: url("../images/setup-button-hover.png") no-repeat scroll center center #FF8555;
+        background: url("../images/change.png") no-repeat scroll center;
 	}
     
 	.setup textarea {
