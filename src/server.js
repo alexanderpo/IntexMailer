@@ -34,9 +34,4 @@ app.use((req, res, next) => {
 });
 
 // arrow functions
-const server = app.listen(3000, () => {
-	// destructuring
-  const { port } = server.address();
-  // string interpolation:
-  console.log(`Intex Mailer listening at http://localhost:${port}`);
-});
+app.listen(process.env.PORT || 5000);

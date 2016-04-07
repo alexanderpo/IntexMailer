@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node_modules/babel/bin/babel.js src --source-maps --out-dir dist",
-    "start": "node_modules/babel/bin/babel-node.js src/server.js",
+    "start": "babel-node --presets es2015 src/server.js",
     "lint": "eslint . --ext .js --ext .jsx"
   },
   "author": "alexpo",
@@ -14,6 +14,8 @@
   "dependencies": {
     "babel": "^5.8.29",
     "babel-core": "^6.4.5",
+    "babel-cli": "^6.0.0",
+    "babel-preset-es2015": "^6.0.0",
     "body-parser": "^1.15.0",
     "connect": "^3.4.1",
     "cookie-parser": "^1.4.1",
