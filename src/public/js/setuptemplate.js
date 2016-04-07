@@ -23,13 +23,13 @@ $(document).ready(() => {
 
       iframeDocument
         .find('a')
-        .on('click', (click) => { // diactivate links in iframe doc
+        .on('click touchstart', (click) => { // diactivate links in iframe doc
           click.preventDefault();
         });
 
       iframeDocument
         .find('body')
-        .on('click', (event) => { // when object was cliked in iframe body tag
+        .on('click touchstart', (event) => { // when object was cliked in iframe body tag
           $(frameElement).removeClass('markedElement'); // delete previous active element
           $('.setups').empty();  // clean place for new inputs
 
@@ -82,39 +82,39 @@ $(document).ready(() => {
         });
     });
 
-  $(document).on('click', '#textSetupButton', () => { // edit text elements
+  $(document).on('click touchstart', '#textSetupButton', () => { // edit text elements
     const inputValue = $('#textSetupButton').prev().val();
     frameElement.text(inputValue);
   });
 
-  $(document).on('click', '#linkSetupButton', () => { // edit links elements
+  $(document).on('click touchstart', '#linkSetupButton', () => { // edit links elements
     const inputValue = $('#linkSetupButton').prev().val();
     frameElement.attr('href', inputValue);
   });
 
-  $(document).on('click', '#imageSetupButton', () => { // edit links elements
+  $(document).on('click touchstart', '#imageSetupButton', () => { // edit links elements
     const tempPath = URL.createObjectURL($('#imageSetupButton').prev()[0].files[0]);
     frameElement.attr('src', tempPath);
   });
   // sending email
 
-  $('#addEmailInput').on('click', () => {
+  $('#addEmailInput').on('click touchstart', () => {
     $('.emails').append(
       '<input type="email" class="email" name="email" placeholder="youremail@mail.com"><a id="deleteMailInput" class="deleteMailInput" />'
     )
     .fadeIn(700);
   });
 
-  $(document).on('click', '.deleteMailInput', () => {
+  $(document).on('click touchstart', '.deleteMailInput', () => {
     $('#deleteMailInput').prev().remove();
     $('#deleteMailInput').remove();
   });
 
-  $('.email').on('click', () => {
+  $('.email').on('click touchstart', () => {
     $(frameElement).removeClass('markedElement');
   });
 
-  $('#sendTemplate').on('click', () => {
+  $('#sendTemplate').on('click touchstart', () => {
     const frameDocument = $('.email-preview').children().contents().find('html').get(0);
 
     const email = $('.email').map(function() {

@@ -1,5 +1,4 @@
 import nodemailer from 'nodemailer';
-// import smtpTransport from 'nodemailer-smtp-transport';
 
 const smtpTransport = nodemailer.createTransport({
   service: 'Gmail',
@@ -10,7 +9,6 @@ const smtpTransport = nodemailer.createTransport({
 });
 
 export function sendMail(req, res) {
-  // const transporter = nodemailer.createTransport(smtpTransport(smtpTransportOptions));
   const queryLenght = Object.keys(req.query.to).length;
 
   for (let i = 0; i < queryLenght; i++) {
@@ -30,14 +28,5 @@ export function sendMail(req, res) {
         res.end('send');
       }
     });
-    /* transporter.sendMail(mailOptions, (err) => {
-      if (err) {
-        console.log(err);
-        res.end('error');
-      } else {
-        console.log('Message send!');
-        res.end('send');
-      }
-    }); */
   }
 }
