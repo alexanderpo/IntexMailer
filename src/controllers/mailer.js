@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 import smtpTransport from 'nodemailer-smtp-transport';
 
 const smtpTransportOptions = {
-  service: 'Gmail',
+  service: 'smtp.mail.gmail.com',
   auth: {
     user: 'alexpojob@gmail.com',
     pass: 'blbyf[eq',
