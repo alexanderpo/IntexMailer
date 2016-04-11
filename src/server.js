@@ -34,4 +34,4 @@ app.use((req, res, next) => {
 });
 
 // arrow functions
-app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 3000);

@@ -56,8 +56,8 @@ $(document).ready(() => {
             $('.setups')
             .hide()
             .prepend(
-              '<div class="setup"><h4>Enter a new TEXT:</h4><textarea name="textareaName"> '
-              + textElement + '</textarea><button type="" id="textSetupButton"></button></div>'
+              '<div class="setup"><h4>Enter a new TEXT:</h4><textarea id="text-area" name="textareaName"> '
+              + textElement + '</textarea>'
              )
             .fadeIn(700);
           } else if (element.is('a') || element.is('button')) {
@@ -82,8 +82,13 @@ $(document).ready(() => {
         });
     });
 
-  $(document).on('click touchstart', '#textSetupButton', () => { // edit text elements
+  /* $(document).on('click touchstart', '#textSetupButton', () => { // edit text elements
     const inputValue = $('#textSetupButton').prev().val();
+    frameElement.text(inputValue);
+  }); */
+
+  $(document).on('keyup', '#text-area', () => { // edit text elements
+    const inputValue = $('#text-area').val();
     frameElement.text(inputValue);
   });
 
@@ -129,7 +134,7 @@ $(document).ready(() => {
 
     $.get('/send', { to: email, content: template }, (data) => {
       if (data === 'send') {
-        message.empty().html('Email is been sent at ' + email + ' . Please check inbox !').delay(6000).fadeOut('slow');
+        message.empty().html('Email is been sent at <span id="message-email">' + email + '</span>. Please check inbox !').delay(6000).fadeOut('slow');
       } else {
         message.empty().html('Some problem. Please try later... ').delay(10000).fadeOut('slow');
       }

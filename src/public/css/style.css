@@ -52,7 +52,7 @@ ul{list-style:none}
 	
 
     body {
-        background: #fbfbfb;
+        background: url(../images/brickwall.png) repeat;
         color: #757B7F;
         font: 12px 'Helvetica', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
         overflow-y: auto;
@@ -1240,8 +1240,16 @@ ul{list-style:none}
 	
 	#message { 
 		margin: 10px 0; 
-		padding: 0;
+		background: #F6F6F6;
+    	padding: 10px;
+    	border-radius: 5px;
 		float: left;
+		display: none;
+	}
+
+	#message-email {
+		color:#23ABF1;
+		font-size: 13px;
 	}
 
 	.error_message { 
@@ -1325,8 +1333,8 @@ ul{list-style:none}
 		padding: 10px;
 		resize: none;
 		font:12px 'Helvetica','Lucida Sans Unicode','Lucida Grande',sans-serif;
-		height:140px;
-        width:240px;
+		height:185px;
+        width:280px;
 	}
 
 	.setup textarea:focus {

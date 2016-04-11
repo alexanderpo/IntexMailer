@@ -1,4 +1,4 @@
-extends layout
+extends layouts/main
 block head
     // PrettyPhoto
     script(src='js/jquery.prettyPhoto.js', type='text/javascript', charset='utf-8')
@@ -99,10 +99,13 @@ block content
             p
               | And it has some awesome features, premium templates, unlimited custom, advanced mail options and so much more!           
           .graybox-right
-            a.btn-image(href='#') Try to create
+            a.btn-image(href='/templates') Try to create
         h4 Latest templates     
         #projects4.gallery
-          li.item(data-id='id-1', data-type='simple')
+          p
+           | Latest 10 templates in template carusel from Mongo DB
+          //
+           li.item(data-id='id-1', data-type='simple')
             .view.overlay
               img(src='images/template/1_thumb.png', alt='title here')                      
               a(href='/templates/oxygen')
@@ -112,33 +115,33 @@ block content
                     | Simple, Branding
                     br
                     b 2016                 
-          li.item(data-id='id-2', data-type='commerce')
-            .view.overlay
-              img(src='images/template/3_thumb.png', alt='title here')                      
-              a(href='/templates/airmail')
-                .mask
-                  h3 Airmail                                
-                  p
-                    | Simple, Branding
-                    br
-                    b 2016                               
-          li.item(data-id='id-3', data-type='branding')
-            .view.overlay
-              img(src='images/template/7_thumb.png', alt='title here')                         
-              a(href='/templates/go')
-                .mask
-                  h3 Go                               
-                  p
-                    | Simple, Branding
-                    br
-                    b 2016                 
-          li.item(data-id='id-4', data-type='marketing')
-            .view.overlay
-              img(src='images/template/5_thumb.png', alt='title here')                         
-              a(href='/templates/cleave')
-                .mask
-                  h3 Cleave                           
-                  p
-                    | Simple, Branding
-                    br
-                    b 2016
+            li.item(data-id='id-2', data-type='commerce')
+              .view.overlay
+                img(src='images/template/3_thumb.png', alt='title here')                      
+                a(href='/templates/airmail')
+                  .mask
+                    h3 Airmail                                
+                    p
+                      | Simple, Branding
+                      br
+                      b 2016                               
+            li.item(data-id='id-3', data-type='branding')
+              .view.overlay
+                img(src='images/template/7_thumb.png', alt='title here')                         
+                a(href='/templates/go')
+                  .mask
+                    h3 Go                               
+                    p
+                      | Simple, Branding
+                      br
+                      b 2016                 
+            li.item(data-id='id-4', data-type='marketing')
+              .view.overlay
+                img(src='images/template/5_thumb.png', alt='title here')                         
+                a(href='/templates/cleave')
+                  .mask
+                    h3 Cleave                           
+                    p
+                      | Simple, Branding
+                      br
+                      b 2016

@@ -1,5 +1,4 @@
-extends layouts/main
-
+extends ../layouts/main
 block head
     link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
 block content
@@ -37,5 +36,8 @@ block content
             a(href='/templates/all') All
           li.responsive
             a(href='/templates/responsive') Responsive
-          li.animation
+          li.current.animation
             a(href='/templates/animated') Gif Animation
+        // Projects 4 columns
+        #projects4
+          include ../layouts/displayedTemplates

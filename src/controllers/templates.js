@@ -28,7 +28,7 @@ export function getAllTemplates(req, res) {
 
   const templates = responsiveTemplates.concat(animatedTemplates);
 
-  res.render('allTemplates', {
+  res.render('categories/allTemplates', {
     title: 'I.M. - Templates',
     items: templates,
   });
@@ -47,7 +47,7 @@ export function getAnimatedTemplates(req, res) {
     dataId: tem.dataId,
   }));
 
-  res.render('animated', {
+  res.render('categories/animated', {
     title: 'I.M. - Animated',
     items: templates,
   });
@@ -66,7 +66,7 @@ export function getResponsiveTemplates(req, res) {
     dataId: tem.dataId,
   }));
 
-  res.render('responsive', {
+  res.render('categories/responsive', {
     title: 'I.M. - Responsive',
     items: templates,
   });

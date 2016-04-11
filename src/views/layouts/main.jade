@@ -53,36 +53,27 @@ html
         .footer-left
           ul.footer-menu
             li
-              a(href='#') Home
-            |                         
+              a(href='/') Home                     
             li
-              a(href='#') Templates
-            |                         
+              a(href='/templates') Templates                       
             li.footer-last
-              a(href='#') Contact
-          |                     
+              a(href='/contact') Contact                 
           ul.footer-address
             li
               img(src='/images/home-icon.png')
-              | 25/3 Ilomko. , Belarus , BL 94133
-            |                         
+              | 25/3 Ilomko. , Belarus , BL 94133                       
             li
               img(src='/images/phone-icon.png')
-              | (375) 25-123-587
-            |                         
+              | (375) 25-123-587                     
             li
               img(src='/images/email-icon.png')
               | intexmailer@intexmailer.com
-        | &#x9;
-        |                 
+          &#x9;                
         #footer-newsletter.footer-right
-          p Newsletter
-          |                     
-          form#newsletter(method='post' action='/newsletter')
-            input.newsletter(type='text' name='newsletter[email]' onfocus="if(this.value == 'E-mail here') { this.value = ''; }", onblur="if(this.value == '') { this.value = 'E-mail here'; }" value='E-mail here')
-            |                         
-            button(type='submit') Submit
-      |             
+          p Newsletter                
+          form#newsletter
+            input.newsletter(type='text' name='newsletter[email]' onfocus="if(this.value == 'E-mail here') { this.value = ''; }", onblur="if(this.value == '') { this.value = 'E-mail here'; }" value='E-mail here')                       
+            button(type='submit') Submit         
       #footer-bottom
         #footer-center-bottom.container
           // Copyright
@@ -92,21 +83,14 @@ html
           // Social Links
           ul.social-links
             li.facebook
-              a(href='#') Facebook
-            |                     
+              a(href='#') Facebook                   
             li.twitter
-              a(href='#') Twitter
-            |                     
+              a(href='#') Twitter              
             li.vimeo
-              a(href='#') Vimeo
-            |                     
+              a(href='#') Vimeo                
             li.linkedin
-              a(href='#') LinkedIn
-            |                     
+              a(href='#') LinkedIn                    
             li.dribble
-              a(href='#') Dribbleo
-            |                     
+              a(href='#') Dribbleo                
             li.google
               a(href='#') Google
-          // /Social Links
-    // /Footer
