@@ -1,14 +1,24 @@
 import nodemailer from 'nodemailer';
+// import smtpTransport from './serviceAuth';
 
-const smtpTransport = nodemailer.createTransport({
-  service: 'Gmail',
-  auth: {
-    user: 'alexpojob@gmail.com',
-    pass: 'blbyf[eq',
-  },
-});
+let smtpTransport;
 
-export function sendMail(req, res) {
+export function serviceParams(req, res) {
+  if ((req.query.user && req.query.pass) === '') {
+    res.end('empty');
+  } else {
+    smtpTransport = nodemailer.createTransport({
+      service: req.query.mailer,
+      auth: {
+        user: req.query.user,
+        pass: req.query.pass,
+      },
+    });
+    res.end('auth');
+  }
+}
+
+export function sendEmail(req, res) {
   const queryLenght = Object.keys(req.query.to).length;
 
   for (let i = 0; i < queryLenght; i++) {

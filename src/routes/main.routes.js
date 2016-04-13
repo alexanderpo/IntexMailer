@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { sendMail } from '../controllers/mailer';
+import { sendEmail, serviceParams } from '../controllers/mailer';
 import {
  getAllTemplates,
  getAnimatedTemplates,
@@ -30,6 +30,8 @@ router.get('/contact', (req, res) => {
 // GET setuptemplates page
 router.get('/templates/:category/:name', getSetupTemplatePage);
 
-router.get('/send', sendMail);
+router.get('/send', sendEmail);
+
+router.get('/serviceAuth', serviceParams);
 
 export default router;

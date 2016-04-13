@@ -108,13 +108,11 @@ $(document).ready(() => {
 
   $('#sendTemplate').on('click touchstart', () => {
     const frameDocument = $('.email-preview').children().contents().find('html').get(0);
-
     const email = $('.email').map(function() {
       return $(this).val();
     }).get();
 
     const template = frameDocument.outerHTML;
-
     const message = $('#message');
 
     message.text('Sending email. Please wait...').fadeIn('slow');
@@ -124,6 +122,23 @@ $(document).ready(() => {
         message.empty().html('Email is been sent at <span id="message-email">' + email + '</span>. Please check inbox !').delay(6000).fadeOut('slow');
       } else {
         message.empty().html('Some problem. Please try later... ').delay(10000).fadeOut('slow');
+      }
+    });
+  });
+
+  $('#authService').on('click touchstart', () => {
+    const service = $('#services').val();
+    const serviceUser = $('#serviceUser').val();
+    const servicePassword = $('#servicePassword').val();
+    const authMessage = $('#auth-message');
+
+    authMessage.text('Auth. Waiting...').fadeIn('slow');
+
+    $.get('/serviceAuth', { mailer: service, user: serviceUser, pass: servicePassword }, (data) => {
+      if (data === 'auth') {
+        authMessage.empty().html('Connected!').delay(3000).fadeOut('slow');
+      } else {
+        authMessage.empty().html('Some problem.Check required fields.').delay(3000).fadeOut('slow');
       }
     });
   });

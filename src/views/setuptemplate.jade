@@ -32,10 +32,19 @@ block content
         #email-custom
           .setups
           .emailsForm
+            .setupService
+              h4 Select supported service 
+              select(id="services", name="services")
+                each service in supportServices
+                  option(value="#{service}") #{service}
+                input(type='email' id='serviceUser' placeholder="Mail username..")
+                input(type='password' id='servicePassword' placeholder="Password...")
+              button#authService Connect
+              span#auth-message
             h4 Enter E-Mail: 
             a#addEmailInput
             .emails
-              input(type='email', class='email', name="email", onfocus="if(this.value == 'youremail@mail.com') { this.value = ''; }", onblur="if(this.value == '') { this.value = 'youremail@mail.com'; }", value='youremail@mail.com')
-            a#sendTemplate Send email
+              input(type='email' class='email' name="email" placeholder="youremail@mail.com")
+            button#sendTemplate Send email
             br
             span#message
