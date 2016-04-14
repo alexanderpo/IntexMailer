@@ -2,10 +2,35 @@ extends layouts/main
 block head
     // PrettyPhoto
     script(src='js/jquery.prettyPhoto.js', type='text/javascript', charset='utf-8')
+    script(src='css/carusel/owl.carousel.min.js', type='text/javascript', charset='utf-8')
+    link(rel='stylesheet', type='text/css', href='/css/carusel/assets/owl.carousel.min.css')  
     script(type='text/javascript', charset='utf-8').
       $(document).ready(function(){
       $("area[rel^='prettyPhoto']").prettyPhoto();
       $(".gallery:first a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'fast',theme:'pp_default',slideshow:4000, opacity: 0.50, deeplinking: false, overlay_gallery: false, autoplay_slideshow: false});
+      $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        responsiveClass:true,
+        autoplay:true,
+        autoplayTimeout:1500,
+        autoplayHoverPause:true,
+        responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            600:{
+                items:3,
+                nav:false
+            },
+            1000:{
+                items:5,
+                nav:true,
+                loop:true
+            }
+        }
+      });
       });
     // FlexSlider
     script(src='js/jquery.flexslider.js')
@@ -101,14 +126,11 @@ block content
           .graybox-right
             a.btn-image(href='/templates') Try to create
         h4 Latest templates     
-        #projects4.gallery
-          p
-           | Latest 10 templates in template carusel from Mongo DB
-          //
-           li.item(data-id='id-1', data-type='simple')
+        .owl-carousel.owl-theme
+          li.item(data-id='id-1', data-type='simple')
             .view.overlay
               img(src='images/template/1_thumb.png', alt='title here')                      
-              a(href='/templates/oxygen')
+              a(href='/templates/responsive/oxygen')
                 .mask
                   h3 Oxygen                              
                   p
@@ -118,7 +140,7 @@ block content
             li.item(data-id='id-2', data-type='commerce')
               .view.overlay
                 img(src='images/template/3_thumb.png', alt='title here')                      
-                a(href='/templates/airmail')
+                a(href='/templates/responsive/airmail')
                   .mask
                     h3 Airmail                                
                     p
@@ -128,7 +150,7 @@ block content
             li.item(data-id='id-3', data-type='branding')
               .view.overlay
                 img(src='images/template/7_thumb.png', alt='title here')                         
-                a(href='/templates/go')
+                a(href='/templates/responsive/go')
                   .mask
                     h3 Go                               
                     p
@@ -138,10 +160,10 @@ block content
             li.item(data-id='id-4', data-type='marketing')
               .view.overlay
                 img(src='images/template/5_thumb.png', alt='title here')                         
-                a(href='/templates/cleave')
+                a(href='/templates/responsive/cleave')
                   .mask
                     h3 Cleave                           
                     p
                       | Simple, Branding
                       br
-                      b 2016
+                      b 2016               

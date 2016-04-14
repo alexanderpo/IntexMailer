@@ -961,6 +961,10 @@ ul{list-style:none}
 	width: 235px;	
 }
 
+.item {
+	list-style: none;
+}
+
 #projects3 li{
 	float: left;
 	height: auto;
