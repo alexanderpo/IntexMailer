@@ -25,7 +25,7 @@ export function sendEmail(req, res) {
     const mailOptions = {
       from: 'Intex - Mailer <sender@example.com>',
       to: req.query.to[i],
-      subject: 'Intex Mailer Template',
+      subject: req.query.subj,
       html: req.query.content,
     };
 

@@ -91,8 +91,8 @@ $(document).ready(() => {
   // sending email
 
   $('#addEmailInput').on('click touchstart', () => {
-    $('.emails').append(
-      '<input type="email" class="email" name="email" placeholder="youremail@mail.com"><a id="deleteMailInput" class="deleteMailInput" />'
+    $('.addedMails').append(
+      '<input type="email" class="email" name="email" placeholder="recipientl@mail.com"><a id="deleteMailInput" class="deleteMailInput" />'
     )
     .fadeIn(700);
   });
@@ -114,12 +114,16 @@ $(document).ready(() => {
 
     const template = frameDocument.outerHTML;
     const message = $('#message');
+    const subject = $('#mailSubject').val();
 
     message.text('Sending email. Please wait...').fadeIn('slow');
 
-    $.get('/send', { to: email, content: template }, (data) => {
+    $.get('/send', { to: email, subj: subject, content: template }, (data) => {
       if (data === 'send') {
         message.empty().html('Email is been sent at <span id="message-email">' + email + '</span>. Please check inbox !').delay(6000).fadeOut('slow');
+        $('#mailSubject').val('');
+        $('.email').val('');
+        $('.addedMails').empty();
       } else {
         message.empty().html('Some problem. Please try later... ').delay(10000).fadeOut('slow');
       }
@@ -137,6 +141,8 @@ $(document).ready(() => {
     $.get('/serviceAuth', { mailer: service, user: serviceUser, pass: servicePassword }, (data) => {
       if (data === 'auth') {
         authMessage.empty().html('Connected!').delay(3000).fadeOut('slow');
+        $('#serviceUser').val('');
+        $('#servicePassword').val('');
       } else {
         authMessage.empty().html('Some problem.Check required fields.').delay(3000).fadeOut('slow');
       }

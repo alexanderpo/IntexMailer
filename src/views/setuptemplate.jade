@@ -37,14 +37,17 @@ block content
               select(id="services", name="services")
                 each service in supportServices
                   option(value="#{service}") #{service}
-                input(type='email' id='serviceUser' placeholder="Mail username..")
-                input(type='password' id='servicePassword' placeholder="Password...")
+                input(type='email' id='serviceUser' placeholder="Service email address...")
+                input(type='password' id='servicePassword' placeholder="Service password...")
               button#authService Connect
               span#auth-message
+              h4 Mail subject:
+              input(type='text' id='mailSubject' placeholder="Mail subject...")
             h4 Enter E-Mail: 
             a#addEmailInput
             .emails
-              input(type='email' class='email' name="email" placeholder="youremail@mail.com")
+              input(type='email' class='email' name="email" placeholder="recipient@mail.com")
+              .addedMails
             button#sendTemplate Send email
             br
             span#message
