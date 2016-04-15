@@ -102,6 +102,10 @@ $(document).ready(() => {
     $('#deleteMailInput').remove();
   });
 
+  $('#close-message').on('click', () => {
+    $('#close-message').parent().fadeOut('slow');
+  });
+
   $('.email').on('click touchstart', () => {
     $(frameElement).removeClass('markedElement');
   });

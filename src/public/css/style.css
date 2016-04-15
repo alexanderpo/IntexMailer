@@ -1287,6 +1287,24 @@ ul{list-style:none}
 		width:696px;
 	}
 
+	#warning-message {
+		margin: 10px 0;
+		color: #333333;
+    	background: rgba(255,133,85, 0.7);
+    	padding: 10px;
+    	border-radius: 5px;
+		float: left;
+		margin-left: 10px;
+		width: 100%;
+		font-size: 15px;
+	}
+
+	#close-message {
+		float: right;
+	    cursor: pointer;
+	    font-weight: bold;
+	}
+
 
 
 	fieldset {

@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { sendEmail, serviceParams } from '../controllers/mailer';
+import { sendEmail, serviceParams, sendUserMessage } from '../controllers/mailer';
 import {
  getAllTemplates,
  getAnimatedTemplates,
@@ -26,6 +26,8 @@ router.get('/templates/animated', getAnimatedTemplates);
 router.get('/contact', (req, res) => {
   res.render('contact', { title: 'I.M. - We Here' });
 });
+
+router.post('/contactform', sendUserMessage);
 
 // GET setuptemplates page
 router.get('/templates/:category/:name', getSetupTemplatePage);

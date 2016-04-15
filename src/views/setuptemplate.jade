@@ -33,6 +33,9 @@ block content
           .setups
           .emailsForm
             .setupService
+              span#warning-message
+                | Make sure that your mail account have access to other applications.
+                span#close-message x
               h4 Select supported service 
               select(id="services", name="services")
                 each service in supportServices

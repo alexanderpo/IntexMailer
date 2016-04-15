@@ -115,7 +115,7 @@ block content
           #contact-form
             h4 Send us a message                        
             #message                         
-            form#contactform(method='post', action='contact.php', name='contactform')
+            form#contactform(method='post', action='/contactform', name='contactform')
               input#name(name='name', type='text', size='30', onfocus="if(this.value == 'Name') { this.value = ''; }", onblur="if(this.value == '') { this.value = 'Name'; }", value='Name')                             
               input#email(name='email', type='text', size='30', onfocus="if(this.value == 'E-mail') { this.value = ''; }", onblur="if(this.value == '') { this.value = 'E-mail'; }", value='E-mail')                            
               input#phone.last(name='phone', type='text', size='30', onfocus="if(this.value == 'Phone') { this.value = ''; }", onblur="if(this.value == '') { this.value = 'Phone'; }", value='Phone')                             
