@@ -11,6 +11,14 @@ $(document).ready(() => {
     // element.css('background','#23ABF1');
   }
 
+  function showHideEmailSetupForm(objName) {
+    if ($(objName).css('display') === 'none') {
+      $(objName).animate({ height: 'show' }, 400);
+    } else {
+      $(objName).animate({ height: 'hide' }, 200);
+    }
+  }
+
   $('.email-preview')
     .children()
     .load(() => { // load iframe document
@@ -89,6 +97,10 @@ $(document).ready(() => {
     frameElement.attr('src', tempPath);
   });
   // sending email
+
+  $('#showSetupEmailForm').on('click touchstart', () => {
+    showHideEmailSetupForm('.emailsForm');
+  });
 
   $('#addEmailInput').on('click touchstart', () => {
     $('.addedMails').append(
