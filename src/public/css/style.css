@@ -657,6 +657,9 @@ ul{list-style:none}
 
 	#showSetupEmailForm {
 		cursor: pointer;
+	    background-color: #23ABF1;
+	    padding: 5px;
+	    border-radius: 5px;
 	}
 	
 	#sendTemplate:hover {
