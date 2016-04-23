@@ -18,8 +18,8 @@ export function sendUserMessage(req, res) {
   smtpTransport = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: 'alexpojob@gmail.com',
-      pass: 'blbyf[eq',
+      user: 'gmail account',
+      pass: 'your password',
     },
   });
 
