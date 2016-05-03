@@ -922,12 +922,12 @@ ul{list-style:none}
 	}
 
 	.tutorial-title {
+		cursor: pointer;
 		margin: 10px 0;
 		color: #FFFFFF;
     	background: rgba(35, 171, 241, 0.29);
     	padding: 10px;
     	border-radius: 5px;
-		margin-left: 10px;
 		width: 100%;
 		font-size: 15px;
 		text-align: center;
@@ -948,11 +948,11 @@ ul{list-style:none}
 	}
 
 	.tutorial-image {
+		display: none;
 		position: relative;
 		background: rgba(35, 171, 241, 0.29);
 		border: 2px solid #ffffff;
-		width: 25%;
-		height: 25%;
+		width: 100%;
 		padding: 10px;
 		border-radius: 6px;
 	}
