@@ -925,7 +925,7 @@ ul{list-style:none}
 		cursor: pointer;
 		margin: 10px 0;
 		color: #FFFFFF;
-    	background: rgba(35, 171, 241, 0.29);
+    	background: rgba(35, 171, 241, 0.6);
     	padding: 10px;
     	border-radius: 5px;
 		width: 100%;
@@ -950,7 +950,7 @@ ul{list-style:none}
 	.tutorial-image {
 		display: none;
 		position: relative;
-		background: rgba(35, 171, 241, 0.29);
+		background: rgba(35, 171, 241, 0.6);
 		border: 2px solid #ffffff;
 		width: 100%;
 		padding: 10px;
