@@ -911,87 +911,159 @@ ul{list-style:none}
 /*  7.  Templates
 /* ------------------------------------------------------------------------------- */
 
+	/*Tutorial page in templates---------------------------------------------------- */
+
+	#tutorial {
+		
+	}
+
+	.tutorial-step {
+		text-transform: uppercase;
+	}
+
+	.tutorial-title {
+		margin: 10px 0;
+		color: #FFFFFF;
+    	background: rgba(35, 171, 241, 0.29);
+    	padding: 10px;
+    	border-radius: 5px;
+		margin-left: 10px;
+		width: 100%;
+		font-size: 15px;
+		text-align: center;
+	}
+
+	.tutorial-number {
+	    border-radius: 50%;
+	    width: 22px;
+	    height: 22px;
+	    padding: 2px;
+	    background: rgba(35, 171, 241, 0.29);
+	    border: 2px solid #FFFFFF;
+	    color: #F6F6F6;
+	    margin-right: 5px;
+	    text-align: center;
+	    font: 20px 'Helvetica','Lucida Sans Unicode','Lucida Grande',sans-serif;
+	    display: inline-block;
+	}
+
+	.tutorial-image {
+		position: relative;
+		background: rgba(35, 171, 241, 0.29);
+		border: 2px solid #ffffff;
+		width: 25%;
+		height: 25%;
+		padding: 10px;
+		border-radius: 6px;
+	}
+	.tutorial-image img {
+		width:100%;
+		height: 100%;
+	}
+
+	.tutorial-image:after, .tutorial-image:before {
+		right: 100%;
+		top: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+
+	.tutorial-image:after {
+		border-color: rgba(35, 171, 241, 0);
+		border-width: 25px;
+		margin-top: -25px;
+	}
+	.tutorial-image:before {
+		border-color: rgba(255, 255, 255, 0);
+		border-right-color: #ffffff;
+		border-width: 28px;
+		margin-top: -28px;
+	}
+
     /*  Template Filter  --------------------------------*/
-	
-	
-.filter {
-	background: #f6f6f6;
-	display: block;
-	height: 70px;
-	margin-bottom: 50px;
-	position: relative;
-	width: 1000px;
-	text-align:center;
-	color:#666;
-	text-transform:lowercase;	
-}
+		
+	.filter {
+		background: #f6f6f6;
+		display: block;
+		height: 70px;
+		margin-bottom: 50px;
+		position: relative;
+		width: 1000px;
+		text-align:center;
+		color:#666;
+		text-transform:lowercase;	
+	}
 
-.filter a{	
-	display: inline-block;
-	font-size:16px;
-	height: 70px;
-	line-height: 70px;
-	width:auto;
-	color: #8a8e90;
-	float:left;
-	padding-left:40px;
-	padding-right:40px;
-}
+	.filter a{	
+		display: inline-block;
+		font-size:16px;
+		height: 70px;
+		line-height: 70px;
+		width:auto;
+		color: #8a8e90;
+		float:left;
+		padding-left:40px;
+		padding-right:40px;
+	}
 
-.filter a:hover{
-	text-decoration:none;
-	background:#23abf1;
-	color:#FFF;
-	font-weight:lighter;
-}
+	.filter a:hover{
+		text-decoration:none;
+		background:#23abf1;
+		color:#FFF;
+		font-weight:lighter;
+	}
 
-.filter .current a{
-	background:#23abf1;
-	color:#FFF;
-}
-
-
-#projects4, #projects3, #projects2{
-	display:block;
-	overflow:hidden;
-	width:100%;
-	width:1020px;
-	margin-left:-10px;	
-}
-
-.slider {margin-right:20px}
+	.filter .current a{
+		background:#23abf1;
+		color:#FFF;
+	}
 
 
-#projects4 li{
-	float: left;
-	height: auto;
-	list-style: none outside none;
-	margin:10px;
-	position: relative;
-	width: 235px;	
-}
+	#projects4, #projects3, #projects2{
+		display:block;
+		overflow:hidden;
+		width:100%;
+		width:1020px;
+		margin-left:-10px;	
+	}
 
-.item {
-	list-style: none;
-}
+	.slider {margin-right:20px}
 
-#projects3 li{
-	float: left;
-	height: auto;
-	list-style: none outside none;
-	margin:10px;
-	position: relative;
-	width: 320px;	
-}
 
-#projects2 li{
-	float: left;
-	height: auto;
-	list-style: none outside none;
-	margin:10px;
-	position: relative;
-	width: 490px;	
-}
+	#projects4 li{
+		float: left;
+		height: auto;
+		list-style: none outside none;
+		margin:10px;
+		position: relative;
+		width: 235px;	
+	}
+
+	.item {
+		list-style: none;
+	}
+
+	#projects3 li{
+		float: left;
+		height: auto;
+		list-style: none outside none;
+		margin:10px;
+		position: relative;
+		width: 320px;	
+	}
+
+	#projects2 li{
+		float: left;
+		height: auto;
+		list-style: none outside none;
+		margin:10px;
+		position: relative;
+		width: 490px;	
+	}
 
     /*  Project Item Overlay  --------------------------------*/
     /*star raiting */
