@@ -29,7 +29,6 @@ router.get('/contact', (req, res) => {
 
 router.post('/contactform', sendUserMessage);
 
-// GET setuptemplates page
 router.get('/templates/:category/:name', getSetupTemplatePage);
 
 router.get('/send', sendEmail);

@@ -1,47 +1,42 @@
 extends layouts/main
 block head
-    // PrettyPhoto
-    script(src='js/jquery.prettyPhoto.js', type='text/javascript', charset='utf-8')
     script(src='css/carusel/owl.carousel.min.js', type='text/javascript', charset='utf-8')
     link(rel='stylesheet', type='text/css', href='/css/carusel/assets/owl.carousel.min.css')  
     script(type='text/javascript', charset='utf-8').
       $(document).ready(function(){
-      $("area[rel^='prettyPhoto']").prettyPhoto();
-      $(".gallery:first a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'fast',theme:'pp_default',slideshow:4000, opacity: 0.50, deeplinking: false, overlay_gallery: false, autoplay_slideshow: false});
-      $('.owl-carousel').owlCarousel({
-        loop:true,
-        margin:10,
-        responsiveClass:true,
-        autoplay:true,
-        autoplayTimeout:1500,
-        autoplayHoverPause:true,
-        responsive:{
-            0:{
-                items:1,
-                nav:true
-            },
-            600:{
-                items:3,
-                nav:false
-            },
-            1000:{
-                items:5,
-                nav:true,
-                loop:true
-            }
-        }
+        $('.owl-carousel').owlCarousel({
+          loop:true,
+          margin:10,
+          responsiveClass:true,
+          autoplay:true,
+          autoplayTimeout:1500,
+          autoplayHoverPause:true,
+          responsive:{
+              0:{
+                  items:1,
+                  nav:true
+              },
+              600:{
+                  items:3,
+                  nav:false
+              },
+              1000:{
+                  items:5,
+                  nav:true,
+                  loop:true
+              }
+          }
+        });
       });
-      });
-    // FlexSlider
     script(src='js/jquery.flexslider.js')
     script(type='text/javascript').
       $(window).load(function(){
-      $('.flexslider').flexslider({
-      animation: "fade",
-      start: function(slider){
-      $('body').removeClass('loading');
-      }
-      });
+        $('.flexslider').flexslider({
+          animation: "fade",
+          start: function(slider){
+            $('body').removeClass('loading');
+          }
+        });
       });
 
 block content

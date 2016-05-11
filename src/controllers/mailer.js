@@ -1,5 +1,4 @@
 import nodemailer from 'nodemailer';
-// import smtpTransport from './serviceAuth';
 
 let smtpTransport;
 

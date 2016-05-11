@@ -5,13 +5,9 @@ block head
 block content
     #header-bg
     #sub-header-bg
-    // / Header Background
-    // Main Container
     #body-wrapper
-      // Header
       #header
         a#logo(href='/')
-        // Navigation
         #search-container
           form#search(method='post')
             input.search(type='text', onfocus="if(this.value == 'Search Template') { this.value = ''; }", onblur="if(this.value == '') { this.value = 'Search Template'; }", value='Search Template')             
@@ -23,15 +19,10 @@ block content
             a(href='/templates/') Templates           
           li
             a(href='/contact') Contact
-        // /Navigation
-      // /Header
-      // Content
       #content.container.clearfix
-        // Back to top
         p#back-top(style='display: block;')
           a(href='#top')
             span
-        // /Back to top
         ul.filter.group
           li.current.all
             a(href='/templates/all') All
@@ -39,6 +30,5 @@ block content
             a(href='/templates/responsive') Responsive
           li.animation
             a(href='/templates/animated') Gif Animation
-        // Projects 4 columns
         #projects4
           include ../layouts/displayedTemplates

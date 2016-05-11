@@ -3,12 +3,10 @@
 /* eslint prefer-template:2, no-useless-concat:2 */
 
 $(document).ready(() => {
-  var frameElement = ''; // for button Change value
+  var frameElement = '';
 
-  function markSelect(element) { // added class for mark active element
+  function markSelect(element) {
     $(element).addClass('markedElement');
-    // $(element).append('<a id="deleteBlock"><img src="/images/drop.png" /></a>');
-    // element.css('background','#23ABF1');
   }
 
   function showHideEmailSetupForm(objName) {
@@ -21,33 +19,32 @@ $(document).ready(() => {
 
   $('.email-preview')
     .children()
-    .load(() => { // load iframe document
-      const iframeDocument = $('.email-preview').children().contents(); // get iframe doc
+    .load(() => {
+      const iframeDocument = $('.email-preview').children().contents();
 
       iframeDocument.find('head')
-        .append(   // append style for active element, style for cursor on hover
+        .append(
           '<style>.markedElement{background: rgba(255,133,85, 0.7);padding:2px;border-radius:10px;}a,img,h1,h2,h3,h4,h5,h6,span,strong,b,em,p,button,input{cursor:pointer;}</style>'
         );
 
       iframeDocument
         .find('a')
-        .on('click touchstart', (click) => { // diactivate links in iframe doc
+        .on('click touchstart', (click) => {
           click.preventDefault();
         });
 
       iframeDocument
         .find('body')
-        .on('click touchstart', (event) => { // when object was cliked in iframe body tag
-          $(frameElement).removeClass('markedElement'); // delete previous active element
-          $('.setups').empty();  // clean place for new inputs
+        .on('click touchstart', (event) => {
+          $(frameElement).removeClass('markedElement');
+          $('.setups').empty();
 
-          const element = $(event.target); // varibals from active element
+          const element = $(event.target);
           const textElement = element.text();
           const linkElement = element.attr('href');
 
-          frameElement = element; // for global
+          frameElement = element;
 
-          // edit only this elements
           if (element.is('h1') || element.is('h2') || element.is('h3') || element.is('h4') || element.is('h5') ||
             element.is('h6') || element.is('span') || element.is('em') || element.is('strong') || element.is('b') ||
             element.is('p')) {
@@ -82,21 +79,20 @@ $(document).ready(() => {
     });
 
 
-  $(document).on('keyup', '.text-area', () => { // edit text elements
+  $(document).on('keyup', '.text-area', () => {
     const inputValue = $('.text-area').val();
     frameElement.text(inputValue);
   });
 
-  $(document).on('click touchstart', '#linkSetupButton', () => { // edit links elements
+  $(document).on('click touchstart', '#linkSetupButton', () => {
     const inputValue = $('#linkSetupButton').prev().val();
     frameElement.attr('href', inputValue);
   });
 
-  $(document).on('click touchstart', '#imageSetupButton', () => { // edit links elements
+  $(document).on('click touchstart', '#imageSetupButton', () => {
     const tempPath = URL.createObjectURL($('#imageSetupButton').prev()[0].files[0]);
     frameElement.attr('src', tempPath);
   });
-  // sending email
 
   $('#showSetupEmailForm').on('click touchstart', () => {
     showHideEmailSetupForm('.emailsForm');

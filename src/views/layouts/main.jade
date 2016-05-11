@@ -12,36 +12,33 @@ html
     link(rel='stylesheet', href='/css/prettyPhoto.css', type='text/css', media='screen', title='prettyPhoto main stylesheet', charset='utf-8')
     
     script(src='/js/jquery.min.js', type='text/javascript', charset='utf-8')
-        // Back to top
+
     script(type='text/javascript').
       $(document).ready(function(){
-      // hide #back-top first
-      $("#back-top").hide();
-      // fade in #back-top
-      $(function () {
-      $(window).scroll(function () {
-      if ($(this).scrollTop() > 100) {
-      $('#back-top').fadeIn();
-      } else {
-      $('#back-top').fadeOut();
-      }
-      });
-      // scroll body to 0px on click
-      $('#back-top a').click(function () {
-      $('body,html').animate({
-      scrollTop: 0
-      }, 800);
-      return false;
-      });
-      });
+        $("#back-top").hide();
+        $(function () {
+          $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+              $('#back-top').fadeIn();
+            } else {
+              $('#back-top').fadeOut();
+            }});
+
+          $('#back-top a').click(function () {
+            $('body,html').animate({
+              scrollTop: 0
+            }, 800);
+            return false;
+          });
+        });
       });
     script(type='text/javascript').
       $(window).load(function(){
-      var hh = $('#header').height();
-      var fh = $('#footer').height();
-      var wh = $(window).height();
-      var сh = wh - hh - fh;
-      $('#content').css('min-height', сh);
+        var hh = $('#header').height();
+        var fh = $('#footer').height();
+        var wh = $(window).height();
+        var сh = wh - hh - fh;
+        $('#content').css('min-height', сh);
       });
    
     block head     
@@ -76,11 +73,8 @@ html
             button(type='submit') Submit         
       #footer-bottom
         #footer-center-bottom.container
-          // Copyright
           ul.copyright
             li 2016 &copy; Intex Media. All rights reserved
-          // /Copyright
-          // Social Links
           ul.social-links
             li.facebook
               a(href='#') Facebook                   
